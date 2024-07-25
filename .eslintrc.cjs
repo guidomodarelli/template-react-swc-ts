@@ -31,6 +31,14 @@ module.exports = {
       ],
       plugins: ["react-refresh", "unicorn"],
       rules: {
+        "@typescript-eslint/restrict-template-expressions": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "unicorn/no-array-reduce": "off",
+        "unicorn/no-useless-undefined": "off",
+        "unicorn/no-null": "off",
+        "unicorn/switch-case-braces": "off",
+        "@typescript-eslint/no-unnecessary-condition": "off",
         "@typescript-eslint/no-misused-promises": "off",
         "no-empty-pattern": [
           "off",
@@ -40,15 +48,15 @@ module.exports = {
         ],
         "@typescript-eslint/no-empty-interface": "off",
         "react/prop-types": "off",
-        "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+        "react-refresh/only-export-components": "off",
         "unicorn/prevent-abbreviations": [
           2,
           {
-            checkProperties: true,
+            checkProperties: false,
             checkVariables: true,
             checkDefaultAndNamespaceImports: "internal",
             checkShorthandImports: "internal",
-            checkShorthandProperties: true,
+            checkShorthandProperties: false,
             checkFilenames: true,
             extendDefaultReplacements: true,
             extendDefaultAllowList: true,
@@ -57,41 +65,11 @@ module.exports = {
                 value: true,
               },
             },
-            ignore: ["i", "env", "props", "Props", "ref"],
+            ignore: ["i", "env", "props", "Props", "ref", "db"],
           },
         ],
         "unicorn/prefer-module": "off",
-        "unicorn/filename-case": [
-          "error",
-          {
-            case: "pascalCase",
-            ignore: [
-              "main"
-            ]
-          },
-        ],
-      },
-    },
-    {
-      files: ["src/**/utils/**/*.{ts,tsx}", "src/**/types/**/*.{ts,tsx}"],
-      rules: {
-        "unicorn/filename-case": [
-          "error",
-          {
-            case: "kebabCase",
-          },
-        ],
-      }
-    },
-    {
-      files: ["src/**/hooks/**/*.{ts,tsx}"],
-      rules: {
-        "unicorn/filename-case": [
-          "error",
-          {
-            case: "camelCase",
-          },
-        ],
+        "unicorn/filename-case": "off",
       },
     },
     {
